@@ -1,0 +1,42 @@
+;
+;	File 'topol.top' was generated
+;	By user: liang (1000)
+;	On host: ubuntu
+;	At date: Sun May  8 02:27:15 2016
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	GROMACS:      gmx pdb2gmx, VERSION 5.0.4
+;	Executable:   /usr/local/gromacs/bin/gmx
+;	Library dir:  /usr/local/gromacs/share/gromacs/top
+;	Command line:
+;	  pdb2gmx -f G15.gro -ff select -o
+;	Force field was read from the standard Gromacs share directory.
+;
+
+; Include forcefield parameters
+#include "forcefield/forcefield.itp"
+#include "forcefield/eb-cof-2.itp"
+#include "forcefield/apmim.itp"
+#include "forcefield/br.itp"
+#include "forcefield/ions-2.itp"
+#include "forcefield/CO2.itp"
+#include "forcefield/N2.itp"
+#ifdef POSRES_WATER
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+[ system ]
+
+
+[ molecules ]
+;Compound        #mols
+COF                10
+BR                240
+NSC               40
+NSA               40 
+CO2               100
+N2                100
